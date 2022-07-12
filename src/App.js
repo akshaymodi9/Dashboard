@@ -42,6 +42,7 @@ const App =()=> {
           if(updateValue && updateValue.charAt(0) == ","){
             updateValue = updateValue.substring(1)
           }
+          break
         }
         else updateValue+=filterOptions[k]+","
       }

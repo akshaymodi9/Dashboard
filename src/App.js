@@ -32,11 +32,16 @@ const App =()=> {
   })
 
   const updateFilterOptions = (key,value)=>{
-    const updateValue = ""
+    let updateValue = ""
     for(const k in filterOptions ){
-      if (filterOptions[k]!=""){
-        if(filterOptions[k].includes(value)){
-            filterOptions[k].replace(","+value,'')
+      if (filterOptions[k]!==""){
+        if(k === key){
+          let tagUrl = params['tag-url-names']
+          let currentValues = filterOptions[key]
+          updateValue = tagUrl.replace(currentValues,value)
+          if(updateValue && updateValue.charAt(0) == ","){
+            updateValue = updateValue.substring(1)
+          }
         }
         else updateValue+=filterOptions[k]+","
       }
@@ -44,7 +49,7 @@ const App =()=> {
     updateValue+=value
     setFilterOptions({...filterOptions,[key]:value})
     updateParams(updateValue)
-    
+  
   }
 
   const updateParams = (value)=>{

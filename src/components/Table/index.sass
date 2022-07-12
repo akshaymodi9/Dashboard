@@ -1,0 +1,41 @@
+.heading
+    text-align: center
+    color: red
+    
+
+.grouped-components
+    display: flex
+    gap : 5px
+    padding-bottom : 5px
+
+.home,.draw,.away
+    display: flex
+    gap : 20px
+    padding-bottom : 5px
+
+.child 
+    border : 1px solid white;
+    padding : 5px
+
+.flex-grow1
+    flex-grow : 1
+    flex-basis: 25%
+
+.flex-grow2
+    flex-grow: 2
+    flex-basis: 50%
+
+.timestamp-header,.home-header,.draw-header,.away-header
+    font-weight: 600
+    @extend .flex-grow1
+
+.timestamp,.home,.draw,.away
+    @extend .child,.flex-grow1
+
+.team-name-header
+    @extend .flex-grow2
+
+.team-name
+    @extend .child,.flex-grow2
+    .volume
+        float: right

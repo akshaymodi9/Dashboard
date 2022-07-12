@@ -1,0 +1,5 @@
+export const ENDPOINT_URL = "/edge/rest/"
+export const NAVIGATION_ENDPOINT = ENDPOINT_URL+"navigation"
+export const EVENTS_ENDPOINT = ENDPOINT_URL+"events"
+export const LOCATION_ENDPOINT = ENDPOINT_URL+"locale"
+export const CURRENCIES_ENDPOINT = "/bpapi/rest/lookups/currencies"

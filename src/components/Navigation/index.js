@@ -4,10 +4,9 @@ import MultiSelect from '../Filters/MultiSelect'
 import {NAVIGATION_ENDPOINT } from '../../constants';
 import { fetchService } from '../../service';
 
-const NavigationTree = (props) =>{
+const Navigation = (props) =>{
 
     const {updateFilterOptions} = props
-    const [navigation,updateNavigation] = useState([])
     const [filters,updateFilters] = useState([])
     
     const setFilters = (element)=>{
@@ -23,7 +22,6 @@ const NavigationTree = (props) =>{
     useEffect(()=>{
         const fetchData = async () => {
             const navigationResponse = await fetchService(NAVIGATION_ENDPOINT)
-            updateNavigation(navigationResponse)
             navigationResponse.map(element=>{
                 if(element['meta-tags'].length > 0){
                     setFilters(element)
@@ -56,4 +54,4 @@ const NavigationTree = (props) =>{
     )
 }
 
-export default NavigationTree
+export default Navigation

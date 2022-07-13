@@ -5,7 +5,7 @@ import React, { useState,useEffect } from 'react';
 import { fetchService } from './service';
 import { EVENTS_ENDPOINT, LOCATION_ENDPOINT,CURRENCIES_ENDPOINT } from './constants';
 import TableHeader from './components/Table/tableHeader';
-import NavigationTree from './components/NavigationTree';
+import Navigation from './components/Navigation';
 
 
 const App =()=> {
@@ -21,7 +21,7 @@ const App =()=> {
     "tag-url-names":"",
     "price-depth":1,
     "include-price":true,
-    "per-page":30,
+    "per-page":300,
     "currency":currentCurrency  
   })
   const [filterOptions, setFilterOptions] = useState({
@@ -117,7 +117,7 @@ const App =()=> {
       <div className='main-page'>
         <div className='sort-filter'>
           <div className='navigation'>
-            <NavigationTree updateFilterOptions={updateFilterOptions}/> 
+            <Navigation updateFilterOptions={updateFilterOptions}/> 
           </div>
           <div className='sort'>
           <span>Sort :</span> 

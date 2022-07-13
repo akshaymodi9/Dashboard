@@ -47,7 +47,7 @@ const App =()=> {
         else updateValue+=filterOptions[k]+","
       }
     }
-    updateValue+=value
+    if(!updateValue.includes(value)) updateValue+=value
     setFilterOptions({...filterOptions,[key]:value})
     updateParams(updateValue)
   
